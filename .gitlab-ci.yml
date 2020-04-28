@@ -3,10 +3,12 @@ services:
   - docker:dind
 before_script:
   - apk add --update bash coreutils tar curl
-  - git clone --quiet --depth 1 https://github.com/ros-industrial/industrial_ci .industrial_ci -b master
+  - git clone --quiet --depth 1 https://github.com/Briancbn/industrial_ci .industrial_ci -b pr-coverage
 
 variables:
   PARALLEL_TESTS: "true"
+  CODE_COVERAGE: "codecov.io"
+  CODECOV_TOKEN: "3177eede-461f-492e-8eb4-d83dd67b9543"
 
 dashing-main:
   script: .industrial_ci/gitlab.sh ROS_DISTRO=dashing ROS_REPO=main
