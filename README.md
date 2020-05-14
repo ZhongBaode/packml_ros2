@@ -1,6 +1,5 @@
 # packml_ros2
 [![Build Status](https://travis-ci.com/Briancbn/packml_ros2.svg?branch=master)](https://travis-ci.com/Briancbn/packml_ros2)
-[![Pipeline Status](https://gitlab.com/Brian97cbn/packml_ros2-gitlab/badges/master/pipeline.svg)](https://gitlab.com/Brian97cbn/packml_ros2-gitlab/pipelines)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![codecov](https://codecov.io/gh/Briancbn/packml_ros2/branch/experimental/graph/badge.svg)](https://codecov.io/gh/Briancbn/packml_ros2)
 
@@ -54,7 +53,7 @@ Extras:
     
       rviz2
     
-  Load the plugin called `packml_plugin` from the list of plugins. The state machine diagram should appear in RViz, along the buttons for the control of the machine.
+  Selet `Panels>Add New Panel` and load the plugin called `packml_plugin` from the list of plugins. The state machine diagram should appear in RViz, along the buttons for the control of the machine.
 
 * For the real PLC, in a terminal run 
   

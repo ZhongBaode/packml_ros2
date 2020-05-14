@@ -4,7 +4,6 @@ services:
 
 env:
   global:
-    - PARALLEL_TESTS=true
     - CODE_COVERAGE="codecov.io"
 
   matrix:
