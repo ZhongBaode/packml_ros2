@@ -3,6 +3,6 @@ coverage:
     project: off
     patch: off
 
-ignore:
-  - "**/test"
-  - "**/setup.py"
+# ignore:
+#   - "**/test"
+#   - "**/setup.py"
