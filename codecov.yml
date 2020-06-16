@@ -2,7 +2,3 @@ coverage:
   status:
     project: off
     patch: off
-
-ignore:
-  - "**/test"
-  - "**/setup.py"
