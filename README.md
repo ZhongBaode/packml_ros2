@@ -1,7 +1,7 @@
 # packml_ros2
 [![Build Status](https://travis-ci.com/Briancbn/packml_ros2.svg?branch=master)](https://travis-ci.com/Briancbn/packml_ros2)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-
+[![Coverage Status](https://coveralls.io/repos/github/Briancbn/packml_ros2/badge.svg?branch=experimental-coveralls)](https://coveralls.io/github/Briancbn/packml_ros2?branch=experimental-coveralls)
 This package implements a state machine as prescribed in the Packaging Machine Language (PackML) standard in simulation. 
 
 This package also contains an RViz 2 plugin to be able to visualize the state of the state machine, the elapsed time in that state, and to control the triggering of state transitions of the machine through buttons. 
