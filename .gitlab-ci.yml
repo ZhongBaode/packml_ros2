@@ -3,10 +3,11 @@ services:
   - docker:dind
 before_script:
   - apk add --update bash coreutils tar curl
-  - git clone --quiet --depth 1 https://github.com/Briancbn/industrial_ci .industrial_ci -b pr-coverage
+  - git clone --quiet --depth 1 https://github.com/Briancbn/industrial_ci .industrial_ci -b pr-coverage-rebased
 
 variables:
   CODE_COVERAGE: "coveralls.io"
+  COVERALLS_REPO_TOKEN: "Gqzxm0J6y1GWiFvNf3BxtX2ZZ5jatsvda"
 
 dashing-main:
   script: .industrial_ci/gitlab.sh ROS_DISTRO=dashing ROS_REPO=main
