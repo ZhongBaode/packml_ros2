@@ -1,0 +1,18 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  industrial_ci:
+    strategy:
+      matrix:
+        env:
+          - {ROS_DISTRO: eloquent, ROS_REPO: main}
+    env:
+      CODE_COVERAGE: codecov.io
+      CODECOV_TOKEN: 40508495-fb0b-4011-8bd5-b7c0437e07a1
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: 'Briancbn/industrial_ci@pr-coverage'
+        env: ${{matrix.env}}
