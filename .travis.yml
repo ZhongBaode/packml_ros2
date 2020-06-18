@@ -8,8 +8,10 @@ env:
     - ROS_DISTRO="dashing" ROS_REPO=main
     - ROS_DISTRO="eloquent" ROS_REPO=testing
     - ROS_DISTRO="eloquent" ROS_REPO=main
+    - ROS_DISTRO="eloquent" ROS_REPO=main RUN_ASAN=true
+    - ROS_DISTRO="eloquent" ROS_REPO=main RUN_TSAN=true
 
 install:
-  -  git clone --quiet --depth 1 https://github.com/ros-industrial/industrial_ci.git .industrial_ci -b master
+  -  git clone --quiet --depth 1 https://github.com/Briancbn/industrial_ci.git .industrial_ci -b pr-google-sanitizer
 script:
   - .industrial_ci/travis.sh
