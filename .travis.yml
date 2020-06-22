@@ -9,6 +9,7 @@ cache:
 env:
   global:
     - CCACHE_DIR=$HOME/.ccache
+    - CODE_COVERAGE=coveralls.io
   matrix:
     - ROS_DISTRO="dashing" ROS_REPO=testing
     - ROS_DISTRO="dashing" ROS_REPO=main
@@ -16,6 +17,17 @@ env:
     - ROS_DISTRO="eloquent" ROS_REPO=main
 
 install:
-  -  git clone --quiet --depth 1 https://github.com/ros-industrial/industrial_ci.git .industrial_ci -b master
+  -  git clone --quiet --depth 1 https://github.com/Briancbn/industrial_ci.git .industrial_ci -b pr-coverage-rebased
 script:
   - .industrial_ci/travis.sh
+
+after_script:
+  - env
+  - apt-get install tree
+  - tree ./
+  - cp ./.ici_coverage_report/* ./
+  - python3 -m pip install coveralls
+  - gem install coveralls-lcov
+  - coveralls-lcov -v -n coverage.info > coverage.c.json
+  - printf "[report]\nomit = \n\t*/test/*\n\t*/setup.py" > .default.coveragerc
+  - coveralls --merge=coverage.c.json --rcfile=.default.coveragerc
