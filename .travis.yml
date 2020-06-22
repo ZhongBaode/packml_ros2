@@ -1,6 +1,7 @@
 language: generic
 services:
   - docker
+python: "3.6"
 
 cache:
   directories:
