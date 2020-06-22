@@ -18,6 +18,11 @@ env:
     - ROS_DISTRO="eloquent" ROS_REPO=main
 
 install:
-  -  git clone --quiet --depth 1 https://github.com/Briancbn/industrial_ci.git .industrial_ci -b pr-coverage-rebased
+  - sudo apt-get install -y python3-setuptools python3-wheel python3-pip python3-dev
+  - git clone --quiet --depth 1 https://github.com/Briancbn/industrial_ci.git .industrial_ci -b pr-coverage-rebased
+
+before_script:
+  - python3 -m pip install --user coveralls
+
 script:
   - .industrial_ci/travis.sh
