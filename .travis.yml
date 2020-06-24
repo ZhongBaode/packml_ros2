@@ -17,8 +17,9 @@ env:
     - ROS_DISTRO="eloquent" ROS_REPO=main
 
 install:
-  - sudo apt-get install -y python3-setuptools python3-wheel python3-pip python3-dev
-  - git clone --quiet --depth 1 https://github.com/Briancbn/industrial_ci.git .industrial_ci -b pr-coverage-rebased
+  - git clone --quiet --depth 1 https://github.com/Briancbn/industrial_ci.git .industrial_ci -b pr-coverage
 
 script:
   - .industrial_ci/travis.sh
+  - pip install --user coveralls
+  - coveralls --merge=.ici_coverage_report/coverage.json
