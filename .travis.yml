@@ -1,7 +1,6 @@
 language: generic
 services:
   - docker
-dist: bionic
 
 cache:
   directories:
