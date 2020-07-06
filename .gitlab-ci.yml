@@ -24,3 +24,9 @@ eloquent-main:
 
 eloquent-testing:
   script: .industrial_ci/gitlab.sh ROS_DISTRO=eloquent ROS_REPO=testing
+
+foxy-main:
+  script: .industrial_ci/gitlab.sh ROS_DISTRO=eloquent ROS_REPO=main
+
+foxy-testing:
+  script: .industrial_ci/gitlab.sh ROS_DISTRO=eloquent ROS_REPO=testing
