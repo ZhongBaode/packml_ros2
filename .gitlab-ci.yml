@@ -3,7 +3,7 @@ services:
   - docker:dind
 before_script:
   - apk add --update bash coreutils tar curl ccache
-  - git clone --quiet --depth 1 https://github.com/ros-industrial/industrial_ci .industrial_ci -b master
+  - git clone --quiet --depth 1 https://github.com/ipa-mdl/industrial_ci .industrial_ci -b feature/omni-init
   - mkdir -p /builds/$CI_PROJECT_PATH/shared/.ccache
 cache:
   key: ${CI_COMMIT_REF_SLUG}
@@ -24,3 +24,6 @@ eloquent-main:
 
 eloquent-testing:
   script: .industrial_ci/gitlab.sh ROS_DISTRO=eloquent ROS_REPO=testing
+  
+foxy-testing:
+  script: .industrial_ci/gitlab.sh ROS_DISTRO=foxy ROS_REPO=testing
