@@ -11,6 +11,7 @@ cache:
     - /builds/$CI_PROJECT_PATH/shared/.ccache/
 
 variables:
+  CODE_COVERAGE: "codecov.io"
   CCACHE_DIR: "/builds/$CI_PROJECT_PATH/shared/.ccache"
 
 dashing-main:
