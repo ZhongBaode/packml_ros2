@@ -3,7 +3,7 @@ services:
   - docker:dind
 before_script:
   - apk add --update bash coreutils tar curl ccache
-  - git clone --quiet --depth 1 https://github.com/ros-industrial/industrial_ci .industrial_ci -b master
+  - git clone --quiet --depth 1 https://github.com/Briancbn/industrial_ci .industrial_ci -b pr-coverage-rebased
   - mkdir -p /builds/$CI_PROJECT_PATH/shared/.ccache
 cache:
   key: ${CI_COMMIT_REF_SLUG}
